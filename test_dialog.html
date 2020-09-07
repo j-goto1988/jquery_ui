@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ダイアログ</title>
+		<link type="text/css" href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
+		<script src="jquery-3.5.1.min.js"></script>
+		<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#dialog').dialog({
+					width: 600,
+					height: 450,
+					autoOpen: false,
+					modal: true,
+					show: 'bounce',
+					hide: 'explode',
+					buttons: {
+						'リンク': function(){
+							location.href = 'https://www.yahoo.co.jp/';
+						},
+						'閉じる': function(){
+							$(this).dialog('close');
+						}
+					}
+				});
+
+				$('#dialog_btn').on('click', function(){
+					$('#dialog').dialog('open');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="dialog_btn">ダイアログテスト</button>
+		<div id="dialog" title="ダイアログのテスト">
+			サンプルの注意点
+			<ul>
+			    <li>test1</li>
+			    <li>test2</li>
+			    <li>test3</li>
+			    <li>test4</li>
+			</ul>
+		</div>
+	</body>
+</html>
